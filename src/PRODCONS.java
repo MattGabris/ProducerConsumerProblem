@@ -1,6 +1,8 @@
 /* CS471 Project Problem 1: Producer-Consumer Project 
  * @author Matthew Gabris
  * @date 27 July 2021
+ * 
+ * git repo : https://github.com/MattGabris/ProducerConsumerProblem.git
  */
 
 import java.util.ArrayList;
@@ -169,10 +171,9 @@ class Producer extends Thread{
 	@Override
 	public void run() {
 		int counter = 0;
-		System.out.println("got here");
 		PRODCONS proc = new PRODCONS();
 		while (counter < 10000) {
-			while (buffer.size() < proc.MAXBUFFSIZE) {
+			while (buffer.size() < proc.MAXBUFFSIZE) { // TODO here there is an error thrown because there is no mutex lock put into place when the max buffer size has been reached; has to do with number of producers available (line 100)
 	//			while(mutex unlock) {
 				try {
 					Thread.sleep((int)Math.floor(Math.random()*(6)+1));
