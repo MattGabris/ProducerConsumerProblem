@@ -122,6 +122,7 @@ class BufferItem {
 	int REGISTER;
 	float SALEAMT;
 	
+	
 	// default constructor
 	public BufferItem() {
 		String DATE 	= "DD/MM/YY";
